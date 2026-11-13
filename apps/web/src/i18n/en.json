@@ -1,0 +1,80 @@
+{
+  "app": {
+    "name": "Smart Question Bank",
+    "subtitle": "Source-Grounded BCS Exam Preparation",
+    "phaseBadge": "Phase 1: Foundation & Auth"
+  },
+  "nav": {
+    "studentDashboard": "Student Dashboard",
+    "reviewerWorkbench": "Reviewer Workbench",
+    "adminConsole": "Admin Console",
+    "userManagement": "Users & Roles",
+    "logout": "Sign Out"
+  },
+  "roles": {
+    "ADMIN": "Admin",
+    "REVIEWER": "Reviewer",
+    "STUDENT": "Student"
+  },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "loginSubtitle": "Access your BCS preparation and verified question bank",
+    "registerTitle": "Create a Student Account",
+    "registerSubtitle": "Practice strictly with source-verified and human-approved questions",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full Name",
+    "preferredLang": "Preferred Language",
+    "loginButton": "Sign In",
+    "registerButton": "Register",
+    "noAccount": "Need an account? Register",
+    "hasAccount": "Already registered? Sign in",
+    "authError": "Invalid email or password."
+  },
+  "states": {
+    "loading": "Loading data...",
+    "emptyTitle": "No approved content available yet",
+    "emptySubtitle": "Practice sets will appear here after an Admin uploads study materials and a human Reviewer approves generated questions.",
+    "errorTitle": "Failed to load data",
+    "retry": "Retry",
+    "unauthorizedTitle": "Access Denied",
+    "unauthorizedSubtitle": "Your role does not have permission to view this section."
+  },
+  "metrics": {
+    "published_practice_sets": "Published Practice Sets",
+    "approved_questions": "Approved Questions",
+    "my_attempts": "My Attempts",
+    "active_subjects": "Active Subjects",
+    "needs_review_count": "Needs Review",
+    "verified_pending_approval": "Verified (Pending Approval)",
+    "approved_count": "Approved Questions",
+    "rejected_count": "Rejected Questions",
+    "total_users": "Total Users",
+    "total_documents": "Total Documents",
+    "flagged_documents": "Flagged Docs (<0.70 Quality)"
+  },
+  "student": {
+    "heading": "Student Dashboard",
+    "description": "Source-grounded, human-approved BCS MCQ & Written practice",
+    "integrityNote": "Policy: This platform never claims any question will appear in a real BCS exam. All questions are generated strictly from verified sources and approved by a human reviewer."
+  },
+  "reviewer": {
+    "heading": "Reviewer Workbench",
+    "description": "Inspect source citations, option distinctiveness, and approve or reject questions",
+    "emptyTitle": "Review queue is empty",
+    "emptySubtitle": "Questions will appear here after RAG generation and automated verification are enabled in Phases 5–6."
+  },
+  "admin": {
+    "heading": "Admin Console",
+    "description": "Manage users, curriculum, document ingestion, generation, and marking rules",
+    "usersHeading": "User & Role Management",
+    "createUser": "Create User",
+    "role": "Role",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "createButton": "Add User"
+  }
+}

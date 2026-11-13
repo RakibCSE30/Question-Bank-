@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-question-bank-api"
+version = "0.1.0"
+description = "Source-grounded BCS Smart Question Bank API"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0,<1.0.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.9.0,<3.0.0",
+    "pydantic-settings>=2.6.0",
+    "email-validator>=2.2.0",
+    "sqlalchemy>=2.0.36,<3.0.0",
+    "psycopg[binary]>=3.2.3",
+    "alembic>=1.14.0",
+    "argon2-cffi>=23.1.0",
+    "PyJWT>=2.10.0",
+    "celery[redis]>=5.4.0",
+    "redis>=5.2.0",
+    "qdrant-client>=1.12.0",
+    "python-multipart>=0.0.17",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "httpx>=0.28.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
