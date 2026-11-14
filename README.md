@@ -1,6 +1,6 @@
 # Smart Question Bank (স্মার্ট কোয়েশ্চন ব্যাংক)
 
-A source-grounded, Bengali-first BCS exam preparation platform built with **Next.js (App Router + TypeScript + Tailwind CSS)**, **FastAPI**, **PostgreSQL**, **Qdrant**, and **Celery + Redis**.
+A source-grounded, Bengali-first exam preparation platform built with **Next.js (App Router + TypeScript + Tailwind CSS)**, **FastAPI**, **PostgreSQL**, **Qdrant**, and **Celery + Redis**.
 
 ## Non-Negotiable Core Principles
 1. Never claim or imply that any question will appear in a real BCS exam.
