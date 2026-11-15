@@ -12,6 +12,8 @@
     "curriculum": "সিলেবাস ও বিষয়",
     "documents": "পাঠ্যবই ও নথি",
     "ragSearch": "RAG অনুসন্ধান ও AI",
+    "analysis": "সাহিত্য বিশ্লেষণ (ধাপ ৪)",
+    "generator": "MCQ জেনারেটর (ধাপ ৫)",
     "logout": "লগ আউট"
   },
   "roles": {

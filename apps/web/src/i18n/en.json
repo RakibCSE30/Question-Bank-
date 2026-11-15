@@ -12,6 +12,8 @@
     "curriculum": "Subjects & Chapters",
     "documents": "Study Materials",
     "ragSearch": "RAG & AI Readiness",
+    "analysis": "Literature Analysis (Phase 4)",
+    "generator": "MCQ Generator (Phase 5)",
     "logout": "Sign Out"
   },
   "roles": {

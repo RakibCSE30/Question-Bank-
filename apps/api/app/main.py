@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.v1.routers import auth, curriculum, dashboard, documents, health, rag, users
+from app.api.v1.routers import analysis, auth, curriculum, dashboard, documents, health, questions, rag, users
 from app.core.config import get_settings
 from app.core.logging import configure_logging
 
@@ -42,6 +42,8 @@ def create_app() -> FastAPI:
     app.include_router(curriculum.router, prefix=prefix)
     app.include_router(documents.router, prefix=prefix)
     app.include_router(rag.router, prefix=prefix)
+    app.include_router(analysis.router, prefix=prefix)
+    app.include_router(questions.router, prefix=prefix)
 
     return app
 

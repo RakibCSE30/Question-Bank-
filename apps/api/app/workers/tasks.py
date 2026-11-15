@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import uuid
 from decimal import Decimal
+from typing import Any
 
 from sqlalchemy import delete, select
 from sqlalchemy.orm import Session
@@ -129,3 +130,16 @@ def ingest_document_task(document_id: str, force_ocr: bool = False) -> dict[str,
     with SessionLocal() as db:
         doc = process_document_ingestion(db, uuid.UUID(document_id), force_ocr=force_ocr)
         return {"document_id": str(doc.id), "status": doc.ingestion_status}
+
+
+@celery_app.task(name="sqb.questions.generate_pilot_sets")
+def generate_pilot_sets_task(triggered_by_user_id: str, num_sets: int = 5) -> dict[str, Any]:
+    from app.services.generator.mcq_generator import generate_bangla_literature_pilot_sets
+
+    with SessionLocal() as db:
+        sets = generate_bangla_literature_pilot_sets(
+            db,
+            triggered_by=uuid.UUID(triggered_by_user_id),
+            num_sets=num_sets,
+        )
+        return {"created_sets_count": len(sets), "status": "COMPLETED"}

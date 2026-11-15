@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import {
   BookCheck,
   BookMarked,
+  Brain,
   FileText,
   GraduationCap,
   Languages,
@@ -13,6 +14,7 @@ import {
   Menu,
   Search,
   ShieldCheck,
+  Sparkles,
   Users,
   X,
 } from "lucide-react";
@@ -64,6 +66,18 @@ const NAV_ITEMS: NavItem[] = [
     labelKey: "nav.ragSearch",
     roles: ["ADMIN", "REVIEWER"],
     icon: Search,
+  },
+  {
+    href: "/admin/analysis",
+    labelKey: "nav.analysis",
+    roles: ["ADMIN", "REVIEWER"],
+    icon: Brain,
+  },
+  {
+    href: "/admin/generator",
+    labelKey: "nav.generator",
+    roles: ["ADMIN", "REVIEWER"],
+    icon: Sparkles,
   },
   {
     href: "/admin/users",

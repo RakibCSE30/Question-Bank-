@@ -99,3 +99,121 @@ export interface DocumentListResponse {
   items: DocumentItem[];
   total: number;
 }
+
+// Phase 4: Literature Analysis Types
+export interface AuthorEntity {
+  name_bn: string;
+  pen_name_or_title: string | null;
+  era_or_period: string;
+  notable_works: string[];
+  significance: string;
+}
+
+export interface LiteraryWorkEntity {
+  title_bn: string;
+  author_name_bn: string;
+  genre: string;
+  publication_year_or_era: string | null;
+  major_characters: string[];
+  themes: string[];
+}
+
+export interface LiteraryPeriodSummary {
+  period_code: string;
+  period_name_bn: string;
+  span_years: string;
+  key_characteristics: string;
+  core_topics: string[];
+  bcs_mark_weight: number;
+}
+
+export interface TopicPriorityItem {
+  topic_bn: string;
+  chapter_name_bn: string;
+  priority: "HIGH" | "MEDIUM" | "LOW";
+  priority_reason: string;
+  weight_percentage: number;
+  previous_bcs_frequency: number;
+}
+
+export interface PreviousQuestionsTrendAnalysis {
+  total_previous_questions: number;
+  subject_code: string;
+  factual_percentage: number;
+  author_work_percentage: number;
+  chronology_percentage: number;
+  conceptual_percentage: number;
+  most_tested_authors: Array<{ author: string; question_count: number }>;
+  frequently_tested_topics: string[];
+  underrepresented_topics: string[];
+  disclaimer: string;
+}
+
+export interface BanglaLiteratureAnalysisReport {
+  subject_code: string;
+  subject_name_bn: string;
+  authors: AuthorEntity[];
+  literary_works: LiteraryWorkEntity[];
+  periods: LiteraryPeriodSummary[];
+  topic_priorities: TopicPriorityItem[];
+  previous_trends: PreviousQuestionsTrendAnalysis;
+}
+
+// Phase 5: Question Generation & Practice Sets
+export interface QuestionOptionItem {
+  id: string;
+  option_label: "ক" | "খ" | "গ" | "ঘ";
+  option_text_bn: string;
+  sort_order: number;
+}
+
+export interface AnswerKeyItem {
+  id: string;
+  correct_option_id: string;
+  correct_label: "ক" | "খ" | "গ" | "ঘ";
+  rationale_bn: string | null;
+}
+
+export interface GeneratedQuestionItem {
+  id: string;
+  subject_id: string;
+  chapter_id: string | null;
+  batch_job_id: string;
+  question_text_bn: string;
+  explanation_bn: string;
+  question_style: string;
+  difficulty: "EASY" | "MEDIUM" | "HARD";
+  importance: "HIGH" | "MEDIUM" | "LOW";
+  grounding_type: "SOURCE_GROUNDED" | "AI_INFERENCE";
+  source_citations_json: Array<{ source_title?: string; grounding?: string }>;
+  previous_bcs_relation: "EXACT_REPEAT" | "SIMILAR_TOPIC" | "NONE";
+  status: "GENERATED" | "VERIFIED" | "NEEDS_REVIEW" | "REJECTED" | "APPROVED";
+  options: QuestionOptionItem[];
+  answer_key?: AnswerKeyItem;
+  created_at: string;
+}
+
+export interface PracticeSetQuestionItem {
+  id: string;
+  position: number;
+  question: GeneratedQuestionItem;
+}
+
+export interface PracticeSetItem {
+  id: string;
+  subject_id: string;
+  chapter_id: string | null;
+  set_number: number;
+  title_bn: string;
+  target_question_count: number;
+  duration_minutes: number;
+  negative_mark_per_wrong: number;
+  marks_per_correct: number;
+  is_published: boolean;
+  question_count: number;
+  created_at: string;
+}
+
+export interface PracticeSetDetail extends PracticeSetItem {
+  items: PracticeSetQuestionItem[];
+}
