@@ -5,10 +5,13 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import {
   BookCheck,
+  BookMarked,
+  FileText,
   GraduationCap,
   Languages,
   LogOut,
   Menu,
+  Search,
   ShieldCheck,
   Users,
   X,
@@ -43,6 +46,24 @@ const NAV_ITEMS: NavItem[] = [
     labelKey: "nav.adminConsole",
     roles: ["ADMIN"],
     icon: ShieldCheck,
+  },
+  {
+    href: "/admin/curriculum",
+    labelKey: "nav.curriculum",
+    roles: ["ADMIN"],
+    icon: BookMarked,
+  },
+  {
+    href: "/admin/documents",
+    labelKey: "nav.documents",
+    roles: ["ADMIN", "REVIEWER"],
+    icon: FileText,
+  },
+  {
+    href: "/admin/rag",
+    labelKey: "nav.ragSearch",
+    roles: ["ADMIN", "REVIEWER"],
+    icon: Search,
   },
   {
     href: "/admin/users",

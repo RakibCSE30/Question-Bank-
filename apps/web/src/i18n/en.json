@@ -2,13 +2,16 @@
   "app": {
     "name": "Smart Question Bank",
     "subtitle": "Source-Grounded BCS Exam Preparation",
-    "phaseBadge": "Phase 1: Foundation & Auth"
+    "phaseBadge": "Phase 2: Document & OCR Ingestion"
   },
   "nav": {
     "studentDashboard": "Student Dashboard",
     "reviewerWorkbench": "Reviewer Workbench",
     "adminConsole": "Admin Console",
     "userManagement": "Users & Roles",
+    "curriculum": "Subjects & Chapters",
+    "documents": "Study Materials",
+    "ragSearch": "RAG & AI Readiness",
     "logout": "Sign Out"
   },
   "roles": {

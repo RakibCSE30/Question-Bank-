@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
-import { Users } from "lucide-react";
+import { BookMarked, FileText, Users } from "lucide-react";
 import { AppShell } from "@/components/layout/AppShell";
 import { ErrorState, LoadingState } from "@/components/ui/StateViews";
 import { useI18n } from "@/i18n/I18nContext";
@@ -40,13 +40,29 @@ export default function AdminDashboardPage() {
             <h1 className="text-2xl font-bold text-slate-900">{t("admin.heading")}</h1>
             <p className="mt-1 text-sm text-slate-600">{t("admin.description")}</p>
           </div>
-          <Link
-            href="/admin/users"
-            className="inline-flex items-center gap-2 rounded-lg bg-emerald-800 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-900"
-          >
-            <Users className="h-4 w-4" />
-            <span>{t("nav.userManagement")}</span>
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href="/admin/curriculum"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
+            >
+              <BookMarked className="h-4 w-4 text-emerald-700" />
+              <span>{t("nav.curriculum")}</span>
+            </Link>
+            <Link
+              href="/admin/documents"
+              className="inline-flex items-center gap-2 rounded-lg bg-emerald-800 px-3.5 py-2 text-sm font-semibold text-white transition hover:bg-emerald-900"
+            >
+              <FileText className="h-4 w-4" />
+              <span>{t("nav.documents")}</span>
+            </Link>
+            <Link
+              href="/admin/users"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-sm font-semibold text-slate-800 transition hover:bg-slate-50"
+            >
+              <Users className="h-4 w-4 text-slate-700" />
+              <span>{t("nav.userManagement")}</span>
+            </Link>
+          </div>
         </div>
 
         {loading && <LoadingState />}

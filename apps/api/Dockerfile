@@ -1,3 +1,4 @@
+
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -7,9 +8,13 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    tesseract-ocr \
+    tesseract-ocr-ben \
+    tesseract-ocr-eng \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . .
+
 RUN pip install --no-cache-dir -e ".[dev]"
 
 EXPOSE 8000

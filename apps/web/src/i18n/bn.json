@@ -2,13 +2,16 @@
   "app": {
     "name": "স্মার্ট কোয়েশ্চন ব্যাংক",
     "subtitle": "উৎস-ভিত্তিক বিসিএস প্রস্তুতি প্ল্যাটফর্ম",
-    "phaseBadge": "ধাপ ১: ভিত্তি ও প্রমাণীকরণ"
+    "phaseBadge": "ধাপ ২: নথি ও বাংলা OCR প্রক্রিয়াকরণ"
   },
   "nav": {
     "studentDashboard": "শিক্ষার্থী ড্যাশবোর্ড",
     "reviewerWorkbench": "পর্যালোচনা কেন্দ্র",
     "adminConsole": "অ্যাডমিন কনসোল",
     "userManagement": "ব্যবহারকারী ও ভূমিকা",
+    "curriculum": "সিলেবাস ও বিষয়",
+    "documents": "পাঠ্যবই ও নথি",
+    "ragSearch": "RAG অনুসন্ধান ও AI",
     "logout": "লগ আউট"
   },
   "roles": {

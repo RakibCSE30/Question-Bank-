@@ -10,6 +10,7 @@ celery_app = Celery(
     "smart_question_bank",
     broker=settings.CELERY_BROKER_URL,
     backend=settings.CELERY_RESULT_BACKEND,
+    include=["app.workers.tasks"],
 )
 
 celery_app.conf.update(
