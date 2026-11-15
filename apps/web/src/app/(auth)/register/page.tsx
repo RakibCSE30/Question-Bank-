@@ -33,9 +33,12 @@ export default function RegisterPage() {
         preferred_lang: preferredLang,
       });
       router.push("/");
-    } catch (err) {
-      if (err instanceof ApiError) setError(err.message);
-      else setError(t("states.errorTitle"));
+    } catch (err: any) {
+      if (err instanceof ApiError) {
+        setError(err.message);
+      } else {
+        setError(err?.message || t("states.errorTitle"));
+      }
     } finally {
       setSubmitting(false);
     }

@@ -77,10 +77,18 @@ export async function apiFetch<T>(
     headers.set("Authorization", `Bearer ${accessToken}`);
   }
 
-  const res = await fetch(`${API_BASE}${path}`, {
-    ...options,
-    headers,
-  });
+  let res: Response;
+  try {
+    res = await fetch(`${API_BASE}${path}`, {
+      ...options,
+      headers,
+    });
+  } catch (err: any) {
+    throw new ApiError(
+      0,
+      `সার্ভারের সাথে সংযোগ স্থাপন করা যায়নি (${API_BASE})। ব্যাকএন্ড API চালু আছে কি না অনুগ্রহ করে নিশ্চিত করুন। (${err?.message || "Network Error"})`
+    );
+  }
 
   if (res.status === 401 && retryOnAuth && path !== "/auth/login" && path !== "/auth/refresh") {
     const nextToken = await refreshAccessToken();

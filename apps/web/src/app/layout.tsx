@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="bn" className={`${notoSansBengali.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased">
+    <html lang="bn" suppressHydrationWarning className={`${notoSansBengali.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased" suppressHydrationWarning>
         <I18nProvider>
           <AuthProvider>{children}</AuthProvider>
         </I18nProvider>

@@ -27,9 +27,12 @@ export default function LoginPage() {
       if (user.role === "ADMIN") router.push("/admin");
       else if (user.role === "REVIEWER") router.push("/reviewer");
       else router.push("/");
-    } catch (err) {
-      if (err instanceof ApiError) setError(err.message);
-      else setError(t("auth.authError"));
+    } catch (err: any) {
+      if (err instanceof ApiError) {
+        setError(err.message);
+      } else {
+        setError(err?.message || t("auth.authError"));
+      }
     } finally {
       setSubmitting(false);
     }
